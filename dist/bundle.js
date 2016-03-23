@@ -134,7 +134,7 @@ function bingo(st) {
 function displayResult() {
   var str = "total types " + count + "<br>";
   str += "miss types " + miss + "<br>";
-  str += "あなたは[" + getStatus(miss) + "] です。<br>";
+  str += "You are [<strong>" + getStatus(miss) + "</strong>] <br>";
   var result = document.getElementById('result-display');
   result.style.display = 'block';
   result.innerHTML = str;
@@ -142,7 +142,7 @@ function displayResult() {
 
 function getStatus(miss) {
   if (miss == 0) {
-    return '普通';
+    return 'Normal';
   }
   return 'KUSO';
 }
