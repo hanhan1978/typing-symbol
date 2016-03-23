@@ -1,0 +1,38 @@
+
+.content {
+  text-align: center;
+}
+
+#word-display{
+  color : blue;
+  width : 500px;
+  height : 30px;
+  background-color : #dddddd;
+  margin: auto;
+  padding-top : 4px;
+}
+#answer-display{
+  color : gray;
+  height : 30px;
+  width : 500px;
+  background-color : #cccccc;
+  margin: auto;
+}
+#status-display{
+  color : red;
+  height : 30px;
+  width : 500px;
+  background-color : #dddddd;
+  margin: auto;
+}
+
+#result-display{
+  color : navy;
+  height : auto;
+  width : 500px;
+  background-color : #dddddd;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+}
