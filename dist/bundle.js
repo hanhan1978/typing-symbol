@@ -1,49 +1,79 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 "use strict";
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 var count = 0;
 var miss = 0;
 var end = false;
 
-class Keys {
-  constructor() {
+var Keys = function () {
+  function Keys() {
+    _classCallCheck(this, Keys);
+
     this.key_arr = [];
     this.chs = [];
   }
-  addKey(ch, code, shift) {
-    this.key_arr.push([ch, code, shift]);
-  }
-  createKeyArr() {
-    for (let i = 0; i < this.key_arr.length; i++) {
-      this.chs.push(this.key_arr[i][0]);
+
+  _createClass(Keys, [{
+    key: 'addKey',
+    value: function addKey(ch, code, shift) {
+      this.key_arr.push([ch, code, shift]);
     }
-  }
-  getNextId() {
-    let id = Math.floor(Math.random() * this.chs.length);
-    if (!this.cur_id) {
-      return id;
-    }
-    if (this.cur_id == id) {
-      return getNextId();
-    }
-    return id;
-  }
-  nextChar() {
-    let id = this.getNextId();
-    this.cur_id = id;
-    this.cur_ch = this.key_arr[id][0];
-    this.cur_code = this.key_arr[id][1];
-    this.cur_shift = this.key_arr[id][2];
-  }
-  findChar(code, shift) {
-    for (let i = 0; i < this.key_arr.length; i++) {
-      if (code === this.key_arr[i][1] && shift === this.key_arr[i][2]) {
-        return this.key_arr[i][0];
+  }, {
+    key: 'createKeyArr',
+    value: function createKeyArr() {
+      for (var i = 0; i < this.key_arr.length; i++) {
+        this.chs.push(this.key_arr[i][0]);
       }
     }
-    return '';
-  }
-}
+  }, {
+    key: 'getNextId',
+    value: function (_getNextId) {
+      function getNextId() {
+        return _getNextId.apply(this, arguments);
+      }
+
+      getNextId.toString = function () {
+        return _getNextId.toString();
+      };
+
+      return getNextId;
+    }(function () {
+      var id = Math.floor(Math.random() * this.chs.length);
+      if (!this.cur_id) {
+        return id;
+      }
+      if (this.cur_id == id) {
+        return getNextId();
+      }
+      return id;
+    })
+  }, {
+    key: 'nextChar',
+    value: function nextChar() {
+      var id = this.getNextId();
+      this.cur_id = id;
+      this.cur_ch = this.key_arr[id][0];
+      this.cur_code = this.key_arr[id][1];
+      this.cur_shift = this.key_arr[id][2];
+    }
+  }, {
+    key: 'findChar',
+    value: function findChar(code, shift) {
+      for (var i = 0; i < this.key_arr.length; i++) {
+        if (code === this.key_arr[i][1] && shift === this.key_arr[i][2]) {
+          return this.key_arr[i][0];
+        }
+      }
+      return '';
+    }
+  }]);
+
+  return Keys;
+}();
 
 var k = new Keys();
 k.addKey('>', 190, true);
