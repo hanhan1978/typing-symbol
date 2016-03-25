@@ -1,7 +1,13 @@
 # develop
 
 ```
-$ npm install -g watchify node-sass pug jade-cli
+$ npm install -g watchify node-sass pug jade-cli browserify
 $ npm install
-$ watchify -t babelify -o dist/bundle.js src/main.js
+$ npm run dist
+$ npm run watcher
 ```
+
+
+`npm run dist` for first creation.
+
+Then open `dist` directory with browser-sync or your prefered web-server.
