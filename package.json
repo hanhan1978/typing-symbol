@@ -4,9 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dist"     : "node-sass -r src/scss  -o dist main.css | jade src/jade/*.jade -o dist | browserify -t babelify -o dist/bundle.js src/main.js",
+    "watch-js"   : "watchify -t babelify -o dist/bundle.js src/main.js -v",
+    "watch-css"  : "node-sass -w src/scss/*.scss dist/main.css",
+    "watch-html"  : "jade -w src/jade/*.jade -o dist",
+    "watcher" : "npm run watch-js | npm run watch-css | npm run watch-html"
   },
-  "author": "",
+  "author": "hanhan1978",
   "license": "ISC",
   "devDependencies": {
     "babel-preset-es2015": "^6.6.0",
