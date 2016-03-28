@@ -49,9 +49,9 @@ class Keys {
 
 var k = new Keys();
 k.addKey(')', 48 , true);
+k.addKey('!', 49, true);
 k.addKey('@', 50, true);
 k.addKey('#', 51, true);
-k.addKey('!', 49, true);
 k.addKey('$', 52, true);
 k.addKey('%', 53, true);
 k.addKey('^', 54, true);
@@ -62,10 +62,13 @@ k.addKey(';', 186, false);
 k.addKey(':', 186, true);
 k.addKey('=', 187, false);
 k.addKey('+', 187, true);
+k.addKey(',', 188, false);
 k.addKey('<', 188, true);
 k.addKey('-', 189, false);
 k.addKey('_', 189, true);
+k.addKey('.', 190, false);
 k.addKey('>', 190, true);
+k.addKey('/', 191, false);
 k.addKey('`', 192, false);
 k.addKey('~', 192, true);
 k.addKey('[', 219 , false);
