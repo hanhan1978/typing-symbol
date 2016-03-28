@@ -36,6 +36,7 @@ class Keys {
     this.cur_code  = this.key_arr[id][1];
     this.cur_shift = this.key_arr[id][2];
   }
+
   findChar(code, shift){
     for(let i=0; i<this.key_arr.length; i++){
       if(code === this.key_arr[i][1] && shift === this.key_arr[i][2]){
@@ -47,11 +48,7 @@ class Keys {
 }
 
 var k = new Keys();
-k.addKey('>', 190, true);
-k.addKey('|', 220, true);
-k.addKey('<', 188, true);
-k.addKey("'", 222, false);
-k.addKey('"', 222, true);
+k.addKey(')', 48 , true);
 k.addKey('@', 50, true);
 k.addKey('#', 51, true);
 k.addKey('!', 49, true);
@@ -61,20 +58,24 @@ k.addKey('^', 54, true);
 k.addKey('&', 55, true);
 k.addKey('*', 56, true);
 k.addKey('(', 57 , true);
-k.addKey(')', 48 , true);
+k.addKey(';', 186, false);
+k.addKey(':', 186, true);
 k.addKey('=', 187, false);
 k.addKey('+', 187, true);
+k.addKey('<', 188, true);
 k.addKey('-', 189, false);
 k.addKey('_', 189, true);
-k.addKey("\\", 191, false);
+k.addKey('>', 190, true);
 k.addKey('`', 192, false);
 k.addKey('~', 192, true);
 k.addKey('[', 219 , false);
-k.addKey(']', 221, false);
 k.addKey('{', 219 , true);
+k.addKey('|', 220, true);
+k.addKey('\\', 220, false);
+k.addKey(']', 221, false);
 k.addKey('}', 221, true);
-k.addKey(';', 186, false);
-k.addKey(':', 186, true);
+k.addKey("'", 222, false);
+k.addKey('"', 222, true);
 k.createKeyArr();
 
 hoge();
@@ -101,6 +102,7 @@ document.onkeydown = function(e){
     return;
   }
   ch = k.findChar(key_code, shift_key);
+  console.log(ch);
   
   ans.textContent = ch; 
 
