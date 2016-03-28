@@ -3,6 +3,7 @@
 var count=0;
 var miss =0;
 var end = false;
+var MAX = 4;
 
 
 class Keys {
@@ -109,7 +110,7 @@ document.onkeydown = function(e){
   }else{
     bingo(false);
   }
-  if(count > 19){
+  if(count >= MAX){
     end = true;
     displayResult();
     return;

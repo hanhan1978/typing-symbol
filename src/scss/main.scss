@@ -1,25 +1,36 @@
-.content {
+body {
+  font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
+}
+header {
+  margin-top: 35px;
   text-align: center;
+  .title {
+    font-size: 3rem;
+  }
+}
+.content {
+  margin-top: 35px;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 #word-display{
   color : blue;
   width : 500px;
-  height : 30px;
+  height : 40px;
   background-color : #dddddd;
   margin: auto;
-  padding-top : 4px;
 }
 #answer-display{
   color : gray;
-  height : 30px;
+  height : 40px;
   width : 500px;
   background-color : #cccccc;
   margin: auto;
 }
 #status-display{
   color : red;
-  height : 30px;
+  height : 40px;
   width : 500px;
   background-color : #dddddd;
   margin: auto;
@@ -29,7 +40,7 @@
   color : navy;
   height : auto;
   width : 500px;
-  background-color : #dddddd;
+  background-color : #eeeeee;
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
