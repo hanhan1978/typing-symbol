@@ -85,6 +85,10 @@ hoge();
 function hoge(){
   if(end) return;
   var element = document.getElementById('word-display');
+  if(element.classList.contains('word-display--move')){
+    console.log('remove');
+    element.classList.remove('word-display--move');
+  }
   element.style.color = "#D36015" ;
   k.nextChar();
   element.textContent = k.cur_ch;
@@ -129,6 +133,7 @@ function bingo(st){
     status.style.color = "blue" ;
     status.textContent = 'bingo!!';
     setTimeout(function(){hoge();}, 150);
+    setTimeout(function(){startAnimation();}, 350);
   }else{
     miss++;
     status.style.color = "red" ;
@@ -150,4 +155,12 @@ function getStatus(miss){
     return 'Normal';
   }
   return 'KUSO';
+}
+
+window.onload = startAnimation ;
+    
+function startAnimation(){
+  var element = document.getElementById('word-display');
+  element.classList.add('word-display--move');
+  console.log('started');
 }

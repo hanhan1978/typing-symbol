@@ -14,12 +14,25 @@ header {
   font-size: 1.5rem;
 }
 
-#word-display{
+.word-area{
   color : blue;
   width : 500px;
   height : 40px;
   background-color : #dddddd;
   margin: auto;
+}
+
+.word-area-inside{
+  display: flex;
+  flex-direction:         row-reverse;
+}
+
+#word-display{
+}
+.word-display--move{
+  transition-property : margin-right;
+  transition-duration: 4s;
+  margin-right: 500px;
 }
 #answer-display{
   color : gray;
