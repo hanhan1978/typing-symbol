@@ -1,5 +1,9 @@
 "use strict";
 
+import { square, diag } from './lib.js';
+
+console.log(square(12));
+
 var count=0;
 var miss =0;
 var end = false;
